@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+  }
+
+  .navbar {
+    background-color: white;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    padding: 1rem;
+    align-items: center;
+  }
+  
+  .logo {
+    margin-right: 20px; /* Space between logo and nav-links */
+  }
+
+  .sony img {
+      height: 36px;
+  }
+  .logo img {
+    width: 50px;
+  }
+
+  .mininavbar {
+      background-color: black;
+      height: 36px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: flex-end; /* Moves the content to the right */
+      padding-right: 20px;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style-type: none;
+    margin-left: 10px;
+  }
+
+  .nav-links li {
+    position: relative;
+    margin: 0 1rem;
+  }
+
+  .nav-links li.dropdown > a::after {
+    content: ' ▼'; /* Unicode for a downward arrow */
+    font-size: 12px;
+    margin-left: 5px;
+    color: #000; /* Adjust color to match your design */
+  }
+
+  .nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .sign-in {
+      background-color: #0078d7;
+      color: white;
+      border: none;
+      padding: 0.5rem 1.5rem; 
+      margin-right: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      width: auto; 
+      font-size: 14px;
+      white-space: nowrap; 
+  }
+
+  .search-bar {
+    padding: 0.5rem 2rem; 
+    background-image: url('61088.png'); 
+    background-repeat: no-repeat;
+    background-position: right 10px center; 
+    background-size: 16px;
+    border: 1px solid #ccc; 
+  }
+
+  .hero {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .hero img {
+    width: 100%;
+    height: auto;
+  }
+  
+
+  .hero-button {
+    position: absolute;
+    top: 73%;
+    left: 11%; /* Move it to the left */
+    transform: translateY(-50%); /* Only vertically center the text */
+    text-align: left; /* Align the text to the left */
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .hero-text p {
+    margin: 1rem 0;
+  }
+
+  .btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+
+  .carousel {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .carousel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%; /* Adjust width for desired gradient coverage */
+    height: 100%;
+    z-index: 1;
+  }
+
+  .carousel-item {
+    padding: 6px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .carousel-item img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* Container for the images */
+/* Container for the images */
+.image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .main-image {
+    width: 100%;
+    display: block;
+  }
+  
+  /* Flexbox for horizontal alignment */
+  .overlay-content {
+    position: absolute;
+    top: 50%;  /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Ensure it appears above the main image */
+  }
+  
+  .overlay-text {
+    font-size: 18px;
+    color: white; /* Ensure text is white */
+    margin-right: 10px;
+  }
+  
+  /* Styling the toggle switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 0 10px; /* Space between switch and overlay image */
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #0078d7;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  /* Overlay image styling */
+  .overlay-image {
+    position: absolute;
+    top: -14px; /* Aligns with the top of the photo navbar */
+    left: 480px;
+    width: 142px; 
+    height: auto;
+    z-index: 5; /* Ensures it overlays the photo navbar */
+    margin-left: 10px; /* Spacing from the toggle button */
+}
+
+.image-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.text-content {
+    flex: 1; /* Allows the text to take up the remaining space */
+    margin-right: 20px; /* Add spacing between the text and image */
+}
+
+.text-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    position: absolute;
+    
+}
+
+.image-content img {
+    max-width: 1120px; /* Adjust size as needed */
+    height: auto;
+}
+
+.find-out-more {
+    background-color: #0078d7; /* Same background as Sign In button */
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem; /* Same padding as Sign In button */
+    margin-right: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    position: absolute;
+    top: 160%;
+    left: 4%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 1rem;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #002d72;
+  padding: 2rem;
+  color: white;
+}
+
+.footer-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.footer-logo {
+  width: 150px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-line {
+  width: 80%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 2rem 0;
+}
+
+.footer-location select {
+  background-color: #fff;
+  padding: 0.5rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding: 1rem 0;
+  color: white;
+}
+
